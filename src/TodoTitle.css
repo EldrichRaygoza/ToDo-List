@@ -1,0 +1,13 @@
+.TodoTitle{
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+    padding: 48px;
+    font-weight: normal;
+    color: #A5A5A5;
+}
+
+.TodoTitle span{
+    font-weight: bold;
+    color: aliceblue;
+}

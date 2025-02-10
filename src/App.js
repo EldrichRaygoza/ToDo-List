@@ -1,13 +1,12 @@
+import React from 'react';
 import { TodoTitle } from './TodoTitle';
 import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
 import { TodoItems } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
-import './App.css';
-import React from 'react';
 
 const defaultTodos = [
-  {text: "Cortar cebolla", completed: false},
+  {text: "Cortar cebolla", completed: true},
   {text: "Tomar el Curso de Intro a React.js", completed: false},
   {text: "Llorar con la Llorona", completed: false},
   {text: "LALALALALAL", completed: false}
