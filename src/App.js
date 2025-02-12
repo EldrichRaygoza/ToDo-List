@@ -9,17 +9,32 @@ const defaultTodos = [
   {text: "Cortar cebolla", completed: true},
   {text: "Tomar el Curso de Intro a React.js", completed: false},
   {text: "Llorar con la Llorona", completed: false},
-  {text: "LALALALALAL", completed: false}
+  {text: "LALALALALAL", completed: false},
+  {text: "Usar Estados Derivados", completed: true},
 ];
 
 function App() {
+  const [todos, setTodos] = React.useState(defaultTodos);
+  const [searchValue, setSearchValue] = React.useState('');
+
+  const completedTodos = todos.filter(todo => !!todo.completed).length;
+  const totalTodos = todos.length;
+  const todoList = todos.filter(todo => todo.text.toLowerCase().includes(searchValue.toLowerCase()));
+
+  console.log(`Los usuarios buscan TODOs de ${searchValue}`);
+
   return (
     <React.Fragment>
-      <TodoTitle completed={16} total={25}/>
-      <TodoSearch />
+      <TodoTitle 
+      completed={completedTodos} 
+      total={totalTodos}/>
+      <TodoSearch 
+        searchValue = {searchValue}
+        setSearchValue = {setSearchValue}
+      />
 
       <TodoList>
-        {defaultTodos.map(todo => (
+        {todoList.map(todo => (
           <TodoItems 
             key={todo.text} 
             text={todo.text}
