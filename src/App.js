@@ -27,7 +27,31 @@ function App() {
     }
   );
 
-  console.log(`Los usuarios buscan TODOs de ${searchValue}`);
+  const completeTodo = (text) => {
+    /* newTodos va copear el arrelgo de todos */
+    const newTodos = [...todos];
+    /* Aqui se va buscar el indice del TODO donde se este ejecutando el evento */
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+    );
+    /* la propiedad completed del objeto cuyo indice encontramos va a alternar true/false cuando se ejecute el evento */
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
+    /* Se actualiza los TODOs con el nuevo arreglo */
+    setTodos(newTodos)
+  }
+  
+  const deleteTodo = (text) => {
+    /* newTodos va copear el arrelgo de todos */
+    const newTodos = [...todos];
+    /* Aqui se va buscar el indice del TODO donde se este ejecutando el evento */
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+    );
+    /* En base al indice encontrado va a eliminar este objeto con el metodo Splice, donde se coloca el indice donde va empezar a extraer/borrar y cuantos de ellos se eliminaran*/
+    newTodos.splice(todoIndex, 1);
+    /* Se actualiza los TODOs con el nuevo arreglo */
+    setTodos(newTodos)
+  }
 
   return (
     <React.Fragment>
@@ -45,6 +69,9 @@ function App() {
             key={todo.text} 
             text={todo.text}
             completed={todo.completed}
+            /* Muy importante que cuanto queramos usar una funcion en un prop la encapsulemos en otra funcion */
+            onComplete={() => completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
           />
         ))}
       </TodoList>
