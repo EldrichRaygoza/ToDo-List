@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppUI } from './AppUI';
-import { useLocalStorage } from './useLocalStorage';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 /* const defaultTodos = [
   {text: "Cortar cebolla", completed: true},

@@ -1,9 +1,9 @@
 import React from 'react';
-import { TodoTitle } from '../TodoTitle';
-import { TodoSearch } from '../TodoSearch';
-import { TodoList } from '../TodoList';
-import { TodoItems } from '../TodoItem';
-import { CreateTodoButton } from '../CreateTodoButton';
+import { TodoTitle } from '../components/TodoTitle';
+import { TodoSearch } from '../components/TodoSearch';
+import { TodoList } from '../components/TodoList';
+import { TodoItems } from '../components/TodoItem';
+import { CreateTodoButton } from '../components/CreateTodoButton';
 
 function AppUI({
     completedTodos,
