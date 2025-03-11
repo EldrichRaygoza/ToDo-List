@@ -10,47 +10,44 @@ import { CreateTodoButton } from '../components/CreateTodoButton';
 import { TodoContext } from '../context/TodoContext';
 
 function AppUI(){
+
+    const {
+        loading,
+        error,
+        searchedTodos,
+        completeTodo,
+        deleteTodo
+    } = React.useContext(TodoContext)
+
     return(
         <React.Fragment>
             <TodoTitle />
             <TodoSearch />
             
-            <TodoContext.Consumer>
-                {({
-                    loading,
-                    error,
-                    searchedTodos,
-                    completeTodo,
-                    deleteTodo
-                }) => (
-                    <TodoList>
-                        {loading && (
-                            <>
-                                <TodosLoading/>
-                                <TodosLoading/>
-                                <TodosLoading/>
-                                <TodosLoading/>
-                                <TodosLoading/>
-                            </>
-                        )}
-                        {error && <TodosError/>}
-                        {(!loading && searchedTodos.length === 0) && <EmptyTodos/>}
-                        
-                        {searchedTodos.map(todo => (
-                            <TodoItems 
-                                key={todo.text} 
-                                text={todo.text}
-                                completed={todo.completed}
-                                /* Muy importante que cuanto queramos usar una funcion en un prop la encapsulemos en otra funcion */
-                                onComplete={() => completeTodo(todo.text)}
-                                onDelete={() => deleteTodo(todo.text)}
-                            />
-                        ))}
-                    </TodoList>
+            <TodoList>
+                {loading && (
+                    <>
+                        <TodosLoading/>
+                        <TodosLoading/>
+                        <TodosLoading/>
+                        <TodosLoading/>
+                        <TodosLoading/>
+                    </>
                 )}
-            </TodoContext.Consumer>
-            
-            
+                {error && <TodosError/>}
+                {(!loading && searchedTodos.length === 0) && <EmptyTodos/>}
+                
+                {searchedTodos.map(todo => (
+                    <TodoItems 
+                        key={todo.text} 
+                        text={todo.text}
+                        completed={todo.completed}
+                        /* Muy importante que cuanto queramos usar una funcion en un prop la encapsulemos en otra funcion */
+                        onComplete={() => completeTodo(todo.text)}
+                        onDelete={() => deleteTodo(todo.text)}
+                    />
+                ))}
+            </TodoList>
             <CreateTodoButton />
         </React.Fragment>
     );

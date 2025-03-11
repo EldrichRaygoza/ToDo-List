@@ -1,6 +1,14 @@
+import React from 'react';
 import './TodoTitle.css';
+import { TodoContext } from '../../context/TodoContext';
 
-function TodoTitle({total, completed}){
+function TodoTitle(){
+
+  const {
+    completedTodos : completed, 
+    totalTodos: total,
+  } = React.useContext(TodoContext);
+
   return(
 
     total === 0 ? 
