@@ -1,5 +1,6 @@
 .ModalBackground{
     background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(2px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,5 +10,4 @@
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(2px);
 }

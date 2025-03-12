@@ -24,6 +24,15 @@ function TodoProvider({children}){
           return todoText.includes(searchText)
         }
       );
+
+      const addTodo = (text) => {
+        const newTodos = [...todos];
+        newTodos.push({
+          text,
+          completed: false,
+        });
+        saveTodos(newTodos);
+      };
     
       const completeTodo = (text) => {
         /* newTodos va copear el arreglo de todos */
@@ -36,7 +45,7 @@ function TodoProvider({children}){
         newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
         /* Se actualiza los TODOs con el nuevo arreglo */
         saveTodos(newTodos)
-      }
+      };
       
       const deleteTodo = (text) => {
         /* newTodos va copear el arrelgo de todos */
@@ -49,7 +58,7 @@ function TodoProvider({children}){
         newTodos.splice(todoIndex, 1);
         /* Se actualiza los TODOs con el nuevo arreglo */
         saveTodos(newTodos)
-      }
+      };
       
     return(
         <TodoContext.Provider value={{
@@ -60,6 +69,7 @@ function TodoProvider({children}){
             searchValue,
             setSearchValue,
             searchedTodos,
+            addTodo,
             completeTodo,
             deleteTodo,
             openModal,
