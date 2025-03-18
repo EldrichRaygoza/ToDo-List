@@ -3,12 +3,12 @@ body {
   padding: 0;
   background-color: #333333;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-  display: flex;
-  justify-content: center;
 }
 
 #root {
-  margin: 0 24px;
+  width: 90%;
+  max-width: 680px;
+  margin: 0 auto;
   position: relative;
   min-height: 100vh;
 }
