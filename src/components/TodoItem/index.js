@@ -9,9 +9,6 @@ function TodoItems(props){
       completed={props.completed}
       onComplete={props.onComplete}
     />
-    {/* <span 
-      className={`Icon Icon-check ${props.completed && "Icon-check--active"}`}
-    >V</span> */}
     <p 
       onClick={props.onComplete} 
       className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}
