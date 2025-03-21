@@ -24,8 +24,4 @@ body {
   max-width: 680px;
   margin: 0 auto;
   position: relative;
-  flex: 1;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
 }
