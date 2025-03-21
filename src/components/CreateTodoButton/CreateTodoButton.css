@@ -3,7 +3,6 @@
     color: #FAFAF3;
     font-weight: bold;
     border: none;
-    aspect-ratio: 1 / 1;
     border-radius: 50%;
     cursor: pointer;
     font-size: 36px;
@@ -17,6 +16,11 @@
     height: 48px;
     box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5);
     z-index: 1;
+    aspect-ratio: 1 / 1;
+    appearance: none;
+    -webkit-appearance: none;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 @media (min-width: 768px) {
