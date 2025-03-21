@@ -1,6 +1,6 @@
 .CreateTodoButton{
     background-color: #0794CC;
-    color: #FAFAFA;
+    color: #FAFAF3;
     font-weight: bold;
     border: none;
     border-radius: 50%;
@@ -12,8 +12,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: auto;
+    width: 60px;
+    height: 60px;
     box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5);
     z-index: 1;
 }
@@ -21,7 +21,6 @@
 @media (min-width: 768px) {
 
     .CreateTodoButton{
-        width: 60px;
         transform: rotate(0);
         transition: .3s ease;
     }
