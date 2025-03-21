@@ -3,6 +3,7 @@
     color: #FAFAF3;
     font-weight: bold;
     border: none;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     cursor: pointer;
     font-size: 36px;
