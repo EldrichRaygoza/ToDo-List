@@ -15,7 +15,7 @@ Aquí puse en práctica varios conceptos clave de React, como:
 - **Estructuras StateFul y Stateless**  
 - **Efectos, Contextos y Portales**  
 
-Es un proyecto sencillo pero ideal para reforzar las bases de React. ¡Espero que te sirva! 😊  
+Es un proyecto sencillo pero ideal para reforzar las bases de React. ¡Espero que te sirva! :D  
 
 ## Getting Started with Create React App
 

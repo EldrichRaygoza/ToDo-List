@@ -13,12 +13,20 @@ function TodoTitle(){
 
     total === 0 ? 
     <h1 className='TodoTitle'>
-      <span>😃✏️ Escribe tu primer TODO ✏️😃</span>
+      <div className='TitleText'>
+        <span>😃✏️</span>
+        <span>Escribe tu primer TODO</span>
+        <span>✏️😃</span>
+      </div>
     </h1>
     :
       total === completed ? 
         <h1 className='TodoTitle'>
-          <span>🎉🎉🎉 HAS COMPLETADO TODOs 🎉🎉🎉</span>
+          <div className='TitleCompleted'>
+            <span>🎉🎉🎉</span>
+            <span>HAS COMPLETADO TODOs</span>
+            <span>🎉🎉🎉</span>
+          </div>
         </h1>
       :
         <h1 className='TodoTitle'>

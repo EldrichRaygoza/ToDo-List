@@ -6,7 +6,10 @@ function DeleteIcon({onDelete}) {
         <TodoIcon
             type="delete"
             color='gray'
-            onClick={onDelete}
+            onClick={(e) => {
+                e.stopPropagation();
+                onDelete()
+            }}
         />
     );
     
